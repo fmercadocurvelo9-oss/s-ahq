@@ -26,15 +26,14 @@ jobs:
       - name: Install Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: '9.8.2'
-          
+          gradle-version: '8.14.3'
+
       - name: Build mod
-        working-directory: ./PvPMods
         run: gradle build --stacktrace
 
       - name: Upload JAR
         uses: actions/upload-artifact@v4
         with:
           name: PvPMods-jar
-          path: PvPMods/build/libs/*.jar
+          path: build/libs/*.jar
           
